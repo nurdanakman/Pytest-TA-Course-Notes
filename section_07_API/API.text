@@ -1,0 +1,22 @@
+PUT you should send all data
+PATCH you can send some data -> only change things
+
+HEAD -> only header data
+OPTIONS -> to find out which request methods a server support (OPTION, HEAD, POST, GET ...)
+TRACE -> debugging or logging
+
+Parameters:
+backendAPI/?key1=value1&key2=value2
+
+
+HTTP REQUEST
+host -> address of the other party
+accept -> what will be the download response text, application, xml
+user-agent -> client info mozialla chrome vs.
+accept-encoding -> informs that the data is compressed
+It doesn't happen in body -> get, but it does in put and post, it's like heared.
+
+
+HTTP RESPONSE
+response header section -> content type -> incoming type' type text html YTF-8 vs, response -> 200 ok etc here.
+response body -> content type information is here.

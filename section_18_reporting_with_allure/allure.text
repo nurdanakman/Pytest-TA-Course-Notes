@@ -1,0 +1,24 @@
+Allure Reporting:
+
+- os + wtihout license
+- integrated with multiple TA test framework
+- two steps:
+    - end of the execution allure created xml/JSON format report 
+    - convert these xml/JSON files to HTML (we can see end of the pipeline on CI tools)
+
+- installation
+    - pip install allure-pytest (JSON)
+    - pip install pytest-adapter-allure (XML)
+
+    - install Java8 (java -version)
+    - download Node.js (npm -version)
+    - npm install -g allure-commandline --save-dev (allure)
+
+
+- commands:
+    Generate JSON format
+    - nurdan@nurdans-macbook-pro udemmy- python % pytest --alluredir section_18_reporting_with_allure/report_json_files section_12_pytest/tests
+    Conveert JSON file to html page
+    - allure serve section_18_reporting_with_allure/report_json_files
+
+

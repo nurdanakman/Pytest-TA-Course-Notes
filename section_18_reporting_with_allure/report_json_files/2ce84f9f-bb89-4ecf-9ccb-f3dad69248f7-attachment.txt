@@ -1,0 +1,3 @@
+tc 003
+close browser after test case execution
+----------------------------

@@ -1,0 +1,31 @@
+Configure GIT in your local:
+    git config --global user.name "nurdanakman"
+    git config user.name
+        nurdanakman
+    git config --global user.email "akman.nurdann@gmail.com"
+    git config user.email
+    akman.nurdann@gmail.com
+
+    nurdan@nurdans-macbook-pro ~ % git config --list
+
+Create Local Repo:
+    cd Desktop 
+    mkdir courses       
+    cd courses 
+    git init (created empty git repo)
+
+Clone Remote Repo:
+    git clone "url"
+
+Commit File to Local Repo:
+    UnTraked -> local
+    Stage -> git can understand
+    Tracked -> you can share and push these files
+
+    git status -> see all UnTraked
+    git add files -> this command move the file on Stage status
+
+
+
+
+

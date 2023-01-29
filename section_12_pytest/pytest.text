@@ -1,0 +1,76 @@
+unit test framework
+execute test cases seperatally
+pre-requiste & post script
+assertions
+generate report
+
+to run a py file, inside pytest cases
+test cases should start with "test"
+    - def test_...(): 
+
+to run a directory inside py file inside python cases
+file names should start with "test"
+    - def test_...(): 
+
+
+pytest -v file.py -> shows detailed test case name and passed failed info
+pytest -s file.py -> shows prints
+
+
+@pytest.mark.skip -> unconditional skip
+@pytest.mark.skip("this test have a bug, we wait a fix for that") -> this have condition
+
+a=101
+@pytest.mark.skipif(a>100, reason="this test have a bug, we wait a fix for that") -> skip with if condition
+
+pytest % pytest -s -v -k test_tc_003_login_logout_invalid tests -> -k testcasename -> run only 1 test case
+pytest -s -v -k test_tc_003 tests -> partial test case 
+
+
+@pytest.mark.Smoke -> you can define any thing
+pytest -s -v -m Smoke tests -> run based on Tags
+pytest % pytest -s -v -m "not Smoke" tests -> run all test cases without "Smoke"
+pytest -s -v -m "Smoke or Sanity" tests -> run Smoke or Sanity tags
+pytest -s -v -m "Smoke and Sanity" tests -> run only Smoke + Sanity tags
+
+
+because of these custom tags, I gets some warnings. To don't see this warnings:
+    - section 12 - pytest % pytest -s -v --disable-pytest-warnings -m "Smoke or Sanity" tests -> this arguments can help
+    - Python.ini -> create file
+        [pytest]
+        markers =
+            Smoke: Smoke tests
+            Sanity: Sanity tests
+            Regression: Regression tests
+
+
+ASSERTIONS:
+- assert actual_results != "Testing", "This two values must not be same" -> error comment for failed assertions
+
+Fixture (before and after test case)
+
+-> before & after each tests code
+@pytest.fixture()
+def fixture_code():
+    print("fixture for before test case")
+    print("----------------------------")
+    yield
+    print("close browser after test case execution")
+    print("----------------------------")
+
+
+@pytest.mark.Smoke
+def test_tc_002_registration(fixture_code):
+    print("tc 002")
+
+@pytest.mark.Smoke
+def test_tc_003_registration(fixture_code):
+    print("tc 003")
+
+-> before and after only 1 time
+@pytest.fixture(scope="module")
+
+
+PYTEST HTML REPORTER
+-> pip install pytest-html-reporter
+-> pytest tests -> automatically creates html report

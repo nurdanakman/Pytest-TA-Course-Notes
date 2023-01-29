@@ -1,0 +1,42 @@
+// WHAT IS JSON
+// Json = Javascript object notation
+// JSON is a syntax for storing and exchanging data
+// key and value type - should unique key
+// value can be a list
+// value can be dictionary ( value key..)
+
+// JSON PATH
+// https://jsonpath.com/  -> you can check json path via this site
+
+{
+    "firstName": "John",
+    "lastName": "doe",
+    "city": "Delhi",
+    "age": 26,
+    "address": {
+        "streetAddress": "naist street",
+        "city": "Nara",
+        "postalCode": 
+        {
+            "a": "630-0192",
+            "b": "öclöc"
+        }
+    },
+    "phoneNumbers": [
+        {
+            "type": "iPhone",
+            "number": "0123-4567-8888"
+        },
+        {
+            "type": "home",
+            "number": "0123-4567-8910"
+        }
+    ]
+}
+
+//lastName
+//city[1]
+//city[2] -> inside address
+//address.city
+//adress.postalCode.a
+//phoneNumber[0].type
