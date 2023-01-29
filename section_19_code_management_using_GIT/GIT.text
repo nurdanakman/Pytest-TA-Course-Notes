@@ -24,6 +24,9 @@ Commit File to Local Repo:
 
     git status -> see all UnTraked
     git add files -> this command move the file on Stage status
+    git add . -> put all the files on Stage status
+    git commit -m "This is initial TA course files"
+    
 
 
 
