@@ -18,17 +18,27 @@ Clone Remote Repo:
     git clone "url"
 
 Commit File to Local Repo:
-    UnTraked -> local
+    UnTracked -> local
     Stage -> git can understand
     Tracked -> you can share and push these files
 
-    git status -> see all UnTraked
+    git status -> see all UnTracked
     git add files -> this command move the file on Stage status
     git add . -> put all the files on Stage status
-    git commit -m "This is initial TA course files"
-    
+    git commit -m "message" -> put the files from the Stage to Tracked
 
+Undo Files from Stage to UnTracked:
+    git restore --staged file/directoryName -> move to Stage to UnTracked
+    git log -> show the all commits, branches etc
 
+Check and Discard the Changes:
+    git diff -> show the difference between UnTracked and Stage files
+    git checkout -- fileName -> discard all new Changes
 
+Push Code to Remote Repo:
+    git remote -v -> see remote repository
+    git remote add origin "remote repo url" -> add remote repo to local repo
+    git push origin main -> push from origin(local) to main(remote main branch)
 
-
+Clone Remote Repo:
+    git clone "remote repo url"
