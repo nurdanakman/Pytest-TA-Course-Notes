@@ -1,0 +1,11 @@
+
+JENKINS:
+
+Set up:
+-Java
+-Download Jenkins War file (https://updates.jenkins.io/download/war/)
+    java -jar "jenkins.war" --httpPort=8086 -> run this command
+    go to "http://localhost:8086/" on browser -> admin & password
+
+
+

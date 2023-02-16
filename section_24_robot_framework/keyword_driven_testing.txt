@@ -1,0 +1,52 @@
+Robot framework is a keyword-driven testing tool
+Pre-defined keywords
+Column structure
+Extend with other languages
+Easy syntaxt
+
+test libraries:
+these libraries have several keyword for robot framework
+-standart (default libraries)
+-external 
+  - ExtendedSelenium2Library
+  - Database Library (Python)
+  - HTTP Library (Request)
+
+- also we can extend libraries with python language if some keywords are not exist on the selected libraries
+
+Robot framework installation:
+- install python3
+- install vs code (IDE)
+- install Robocorp and Robot framework language server
+- pip install robotframework-requests
+- pip install -U requests -> if it is exist install upper version
+- pip install -U robotframework-requests -> robot framework external library
+- pip install jsonpath_rw
+  [robotframework                 6.0.2]
+  [robotframework-jsonlibrary     0.5  ]
+  [robotframework-pythonlibcore   4.1.0]
+  [robotframework-requests        0.9.4]
+  [robotframework-seleniumlibrary 6.0.0]
+# pip -> package management system that can install and manage software packages
+
+
+file types:
+- Test case file (.robot)
+- Resources files (.robot) -> will be call from test cases
+  - Sections:
+    * Settings -> import part
+    * Variables
+    * 
+- Python Files (.py) -> created own keywords
+- excel file (.xlsx) -> test data
+- JSON file (Request content)
+
+
+
+Basic Structure of Robot Framework:
+- install packages, add libraries in Settings session, use two space in there "Library  libraryName"
+- variables use two space "${a}  hello"
+- test case "create sessions" if there is a keyword on the test case
+- Body should have different indentation
+
+To execute robot test case: robot fileName
