@@ -1,0 +1,21 @@
+{
+	"id": "e8572e8e-759b-4857-83e8-05550348c343",
+	"values": [
+		{
+			"key": "LICENSE_NUMBER",
+			"value": "aabbcc",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "GLOBAL_DATA",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2023-02-16T22:13:40.198Z",
+	"_postman_exported_using": "Postman/10.10.5"
+}

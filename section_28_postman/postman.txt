@@ -1,0 +1,52 @@
+Postman:
+
+workspace -> share other team memebers
+collection -> container that is saved the requests. Folder
+environments -> you can set up different set up. You can execute same test cases with different environment.
+Logs -> View > Show Console // you can see logs
+Programming -> Pre-requests Script (Java script) & Tests tabs
+
+
+We used https://thetestingworldapi.com/ url for test on Postman
+ POST -> http 201
+ PUT, GET, DELETE -> http 200
+
+
+Collection: (Test Suits)
+-> to save your test cases you should use collection
+-> containers that has saved test cases
+-> you can add folder or subfolder
+-> execute, share or publish collections
+
+Collection documentattion -> publishe this documentation, there are several language versions
+
+Run Complete Collection with single click
+ Click Run Folder or Run Collection button
+ Select test cases that you want to Run
+ Scheduled, iteration,  run is exist
+ You can see passed and failed tests & Summary
+
+
+Environments:
+    Dev -> for developer & unit testing
+    QA Env -> for stage testing
+    UAT -> user acceptance env
+    Prodcution -> released env
+
+    You define some env variables to run test on different env
+
+    DEfine env variabled
+    integrate env variabled to test cases
+    also dev has export option
+    When run collection, you can select env also
+    You can fetch, update, create env variable on the test tab -> This can be used Postman TA instead of Manual testing on the Postman (request chainning)
+
+Global Variables:
+    for example: Licence number
+    common for all environments
+    set data in POSTMAN level
+    use global variable same as Env Variables
+    if same name variable on the env and global, postman firstly checks the env, after that checks the global variables
+    
+
+
