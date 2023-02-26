@@ -50,3 +50,97 @@ Basic Structure of Robot Framework:
 - Body should have different indentation
 
 To execute robot test case: robot fileName
+
+
+
+#Report files location
+Robot is create reprot files automatically.
+You can select specific path for that with this command
+robot -r ./Reports/report.html -o ./Reports/output.xml -l ./Reports/lOg.html TestFile
+
+#Test suites:
+In robot files, each files are a test suit
+Also all folders that have some robot files, each of them are test suits.
+
+when run an robot file -> robot fileName
+when run an robot folder -> robot folderName
+
+
+#Documentation:
+
+You can use some description for test cases, test suit and keywords.
+
+    *** Test Cases ***
+    TC_007_End_to_End_TestCase
+        [Documentation]  This test case is related to end to end test execution
+
+    *** Keywords ***
+    Fetch and Validate Get Status Code
+        [Arguments]  ${student_id}  ${expectedStatusCode}
+        [Documentation] This keyword for some fetching and validating data
+
+    *** Settings ***
+    Library  RequestsLibrary
+    Documentation This suite for geting student details
+
+#Time out:
+
+You can use timeout for test cases, test suit and keywords.
+Time out set an limited time for test execution
+
+    *** Test Cases ***
+    TC_007_End_to_End_TestCase
+        [Timeout]  .2s
+
+    *** Settings ***
+    Library  RequestsLibrary
+    Documentation This suite for geting student details
+    test timeout  .100s
+
+    *** Keywords ***
+    Fetch and Validate Get Status Code
+        [Arguments]  ${student_id}  ${expectedStatusCode}
+        [Documentation] This keyword for some fetching and validating data
+        [Timeout]  .100s
+
+
+Setup -> before the all test case , keywords or test suites
+Tear Down -> after the all test case, keywords or test suites
+
+    *** Test Cases ***
+    TC_001_Fetch_Student_Details_with_Keyword
+        [Setup]         Welcome User
+        [Teardown]      End TestCase
+
+    *** Keywords ***
+    Fetch and Validate Get Status Code
+        [Arguments]  ${student_id}  ${expectedStatusCode}
+        [Setup]         Welcome User
+        [Teardown]      End TestCase
+
+    *** Settings ***
+    Library  RequestsLibrary
+    Resource  Resources/UserKeyword.robot
+    Documentation This suite for geting student details
+    #test timeout  .1s
+    Test Setup  Welcome User
+    Test Teardown  End TestCase
+
+    or
+    
+    Suite Setup  Welcome User
+    Suite Teardown  End TestCase
+
+
+#Tags
+
+// test case examp
+ [Tags]  Smoke  Sanity
+
+// test suite examp
+*** Settings ***
+Force Tags  Hello -> all test cases that are exist on the test suite, has Hello tag
+Default Tags  Hello -> if an test case has no tag, we can set an default tag for these type of test cases
+
+ robot -i SmokeTag folderName -> execute only smoke Tags
+ robot -e SmokeTag folderName -> execute without smoke Tags
